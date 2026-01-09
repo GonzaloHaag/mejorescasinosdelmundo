@@ -1,0 +1,157 @@
+---
+import Hero from "./Hero.astro"
+
+const casinos = [
+  {
+    name: "The Venetian",
+    location: "Las Vegas, USA",
+    description: "Lujo italiano en el corazón del desierto",
+    emoji: "🏛️",
+  },
+  {
+    name: "Casino de Monte-Carlo",
+    location: "Mónaco",
+    description: "El casino más icónico y elegante del mundo",
+    emoji: "👑",
+  },
+  {
+    name: "Marina Bay Sands",
+    location: "Singapur",
+    description: "Arquitectura futurista y vistas espectaculares",
+    emoji: "🌃",
+  },
+];
+---
+
+<section>
+  <Hero />
+  <div id="featured" class="featured-casinos">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="gradient-gold">Casinos</span> Destacados
+      </h2>
+      <p class="section-description">
+        Una selección de los destinos más prestigiosos para vivir la experiencia del juego
+      </p>
+    </div>
+    
+    <div class="casinos-grid">
+      {casinos.map((casino, index) => (
+        <article class="casino-card" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="casino-emoji">{casino.emoji}</div>
+          <h3 class="casino-name">{casino.name}</h3>
+          <p class="casino-location">{casino.location}</p>
+          <p class="casino-description">{casino.description}</p>
+        
+          <div class="decorative-corner">♠</div>
+        </article>
+      ))}
+    </div>
+  </div>
+</div>
+</section>
+
+<style>
+  .featured-casinos {
+    padding: 6rem 2rem;
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-family: serif;
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+	color:#ffffff;
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #f4e5a3 50%, #d4af37 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-description {
+    color: var(--muted-foreground, #9ca3af);
+    font-size: 1.125rem;
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+
+  .casinos-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .casino-card {
+    position: relative;
+    background: var(--card, #1a1a2e);
+    border: 1px solid var(--border, #2a2a3e);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .casino-card:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 4px 14px 0 rgba(212, 175, 55, 0.39);
+  }
+
+  .casino-emoji {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .casino-name {
+    font-family: serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--foreground, #ffffff);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .casino-card:hover .casino-name {
+    color: var(--primary, #d4af37);
+  }
+
+  .casino-location {
+    color: var(--primary, #d4af37);
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .casino-description {
+    color: var(--muted-foreground, #9ca3af);
+  }
+
+  .decorative-corner {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: rgba(212, 175, 55, 0.2);
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .casinos-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section-title {
+      font-size: 3rem;
+    }
+  }
+</style>

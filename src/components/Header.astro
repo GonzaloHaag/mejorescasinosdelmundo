@@ -1,0 +1,72 @@
+---
+const currentUrl = Astro.url.pathname;
+---
+
+<header id="header">
+  <div class="header-container">
+    <a class="logo" href="/">
+        🎰 Mejores Casinos del Mundo
+    </a>
+    <nav>
+      <ul class="list">
+        <li>
+          <a href="/" class={currentUrl === "/" ? "active" : ""}>Inicio</a>
+          <a href="/video/?v=p15XIbO3fUs" class={currentUrl === "/video/?v=p15XIbO3fUs" ? "active" : ""}>Video Review</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #header {
+    background-color: #1a1a1a;
+    width: 100%;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #e3b324;
+    padding-inline: 2rem;
+  }
+  .header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    color: #e3b324;
+    font-size: 1.5rem;
+    margin: 0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    li a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    li a:nth-child(2) {
+        margin-left: 1rem;
+    }
+    li a:hover {
+        text-decoration: underline;
+        color: #e3b324;
+    }
+    .active {
+        text-decoration: underline;
+        color: #e3b324;
+    }
+  }
+</style>

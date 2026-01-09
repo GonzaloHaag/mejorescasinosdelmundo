@@ -1,0 +1,227 @@
+<div class="hero-section">
+  <!-- Background gradient -->
+  <div class="background-gradient"></div>
+
+  <!-- Decorative elements -->
+  <div class="decorative-card spade-1">♠</div>
+  <div class="decorative-card diamond-1" style="animation-delay: 1s;">♦</div>
+  <div class="decorative-card club-1" style="animation-delay: 2s;">♣</div>
+  <div class="decorative-card heart-1" style="animation-delay: 3s;">♥</div>
+
+  <!-- Content -->
+  <div class="content-wrapper">
+    <div class="card-symbols">
+      <span>♠</span>
+      <span class="red-card">♥</span>
+      <span>♣</span>
+      <span class="red-card">♦</span>
+    </div>
+
+    <h1 class="title">
+      <span class="gradient-gold">Mejores Casinos</span>
+      <br />
+      <span class="title-secondary">del Mundo</span>
+    </h1>
+
+    <p class="description">
+      Descubre los casinos más exclusivos y lujosos del planeta. Guías, reseñas
+      y experiencias únicas para los amantes del juego.
+    </p>
+
+    <div class="button-group">
+      <a href="#featured" class="btn btn-primary"> Explorar Casinos </a>
+      <a href="/video/?v=p15XIbO3fUs" class="btn btn-secondary"> Ver Video </a>
+    </div>
+  </div>
+
+  <!-- Bottom fade -->
+  <div class="bottom-fade"></div>
+</div>
+
+<style>
+  .hero-section {
+    position: relative;
+    min-height: calc(100svh - 4rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .background-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      var(--casino-light, #1a1a2e),
+      var(--background, #0f0f1e),
+      var(--background, #0f0f1e)
+    );
+  }
+
+  .decorative-card {
+    position: absolute;
+    opacity: 0.2;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .spade-1 {
+    top: 5rem;
+    left: 2.5rem;
+    font-size: 3.75rem;
+  }
+
+  .diamond-1 {
+    top: 10rem;
+    right: 5rem;
+    font-size: 3rem;
+  }
+
+  .club-1 {
+    bottom: 10rem;
+    left: 5rem;
+    font-size: 3rem;
+  }
+
+  .heart-1 {
+    bottom: 5rem;
+    right: 2.5rem;
+    font-size: 3.75rem;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .content-wrapper {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 5rem 1.5rem 0;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  .card-symbols {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2.25rem;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .red-card {
+    color: #ef4444;
+  }
+
+  .title {
+    font-family: serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #f4e5a3 50%, #d4af37 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .title-secondary {
+    color: var(--foreground, #ffffff);
+  }
+
+  .description {
+    font-size: 1.125rem;
+    color: var(--muted-foreground, #9ca3af);
+    max-width: 42rem;
+    margin: 0 auto 2.5rem;
+    line-height: 1.75;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #d4af37 0%, #f4e5a3 50%, #d4af37 100%);
+    color: var(--primary-foreground, #000000);
+    box-shadow: 0 4px 14px 0 rgba(212, 175, 55, 0.39);
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+
+  .btn-secondary {
+    border: 2px solid var(--primary, #d4af37);
+    color: var(--primary, #d4af37);
+    background: transparent;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(212, 175, 55, 0.1);
+  }
+
+  .bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8rem;
+    background: linear-gradient(
+      to top,
+      var(--background, #0f0f1e),
+      transparent
+    );
+  }
+
+  @media (min-width: 640px) {
+    .button-group {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .title {
+      font-size: 4.5rem;
+    }
+
+    .description {
+      font-size: 1.25rem;
+    }
+  }
+</style>
